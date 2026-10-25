@@ -1,39 +1,40 @@
-# Sistema de E-commerce em TypeScript
+# Sistema de E-Commerce em TypeScript
 
-Projeto acadêmico de um sistema simples de e-commerce executado pelo terminal. O programa permite cadastrar e consultar produtos e clientes, administrar um carrinho de compras, finalizar pedidos e visualizar relatórios básicos.
+Projeto acadêmico de um sistema simples de e-commerce executado via terminal. O programa permite cadastrar e consultar produtos e clientes, administrar um carrinho de compras, finalizar pedidos e visualizar relatórios básicos.
 
-O projeto foi desenvolvido com *TypeScript* e *Node.js*, utilizando funções e módulos separados para organizar as responsabilidades do sistema.
+O projeto foi desenvolvido com **TypeScript** e **Node.js**, utilizando funções e módulos separados para organizar as responsabilidades do sistema.
+
+---
 
 ## Índice
 
 - [Funcionalidades](#funcionalidades)
-- [Tecnologias utilizadas](#tecnologias-utilizadas)
-- [Estrutura do projeto](#estrutura-do-projeto)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Estrutura do Projeto](#estrutura-do-projeto)
 - [Requisitos](#requisitos)
-- [Como instalar e executar](#como-instalar-e-executar)
-- [Como utilizar o sistema](#como-utilizar-o-sistema)
-- [Como funciona uma compra](#como-funciona-uma-compra)
-- [Observações importantes](#observações-importantes)
+- [Como Instalar e Executar](#como-instalar-e-executar)
+- [Como Utilizar o Sistema](#como-utilizar-o-sistema)
+- [Como Funciona uma Compra](#como-funciona-uma-compra)
+- [Observações Importantes](#observações-importantes)
+
+---
 
 ## Funcionalidades
 
 ### Produtos
-
 - Listar os produtos cadastrados.
 - Buscar um produto pelo ID.
-- Cadastrar um produto.
+- Cadastrar novos produtos.
 - Editar nome, categoria, preço ou estoque.
-- Remover um produto.
+- Remover produtos do sistema.
 
 ### Clientes
-
 - Listar os clientes cadastrados.
 - Buscar um cliente pelo ID.
 - Cadastrar um cliente.
 - Validar informações obrigatórias e impedir e-mails duplicados.
 
-### Carrinho de compras
-
+### Carrinho de Compras
 - Adicionar produtos ao carrinho.
 - Consultar os itens do carrinho.
 - Alterar a quantidade de um produto.
@@ -42,32 +43,34 @@ O projeto foi desenvolvido com *TypeScript* e *Node.js*, utilizando funções e 
 - Calcular o subtotal dos itens e o valor total.
 
 ### Pedidos
-
 - Finalizar uma compra para um cliente cadastrado.
 - Consultar os pedidos registrados.
 - Buscar um pedido pelo ID.
-- Consultar os pedidos de um cliente.
+- Consultar os pedidos associados a um cliente.
 - Registrar itens, quantidades, valores e data do pedido.
 
 ### Relatórios
-
 - Exibir um resumo geral do sistema.
-- Consultar informações de estoque.
+- Consultar informações e status de estoque.
 - Consultar vendas por produto.
 - Consultar vendas por cliente.
 
-## Tecnologias utilizadas
+---
 
-- *TypeScript* — linguagem usada no desenvolvimento.
-- *Node.js* — ambiente que executa o JavaScript gerado pelo TypeScript.
-- *npm* — ferramenta utilizada para instalar as dependências do projeto.
-- *readline* — módulo nativo do Node.js usado para receber respostas digitadas no terminal.
+## Tecnologias Utilizadas
 
-Não é necessária uma biblioteca para criar interface gráfica. A interação acontece diretamente pelo terminal.
+- **TypeScript** — Linguagem principal para desenvolvimento com tipagem estática.
+- **Node.js** — Ambiente de execução do JavaScript.
+- **npm** — Gerenciador de pacotes e dependências.
+- **readline** — Módulo nativo do Node.js para captura de entradas do usuário no terminal.
 
-## Estrutura do projeto
+> **Nota:** Não é necessária interface gráfica. A interação ocorre 100% via terminal CLI.
 
-text
+---
+
+## Estrutura do Projeto
+
+```text
 Miniprojeto_Ecommerce_Matozo/
 ├── src/
 │   ├── carrinho.ts
@@ -77,26 +80,22 @@ Miniprojeto_Ecommerce_Matozo/
 │   ├── produtos.ts
 │   ├── relatorios.ts
 │   └── types.ts
-├── dist/                 # Arquivos JavaScript gerados na compilação
-├── node_modules/         # Dependências instaladas pelo npm
+├── dist/                # Arquivos JavaScript gerados na compilação
+├── node_modules/        # Dependências instaladas pelo npm
 ├── .gitignore
 ├── package.json
 ├── package-lock.json
 ├── tsconfig.json
 └── README.md
-
-
-### O que cada arquivo faz?
-
-| Arquivo | Responsabilidade |
-|---|---|
-| src/main.ts | Contém o menu principal, os submenus e a interação com o usuário pelo terminal. Chama as funções dos demais módulos. |
-| src/types.ts | Define os tipos Produto, Cliente, ItemCarrinho, ItemPedido e Pedido, mantendo os dados organizados e tipados. |
-| src/produtos.ts | Gerencia os produtos: listagem, busca, cadastro, edição e remoção. Também mantém os dados de estoque utilizados pelo sistema. |
-| src/clientes.ts | Gerencia os clientes, incluindo listagem, busca e cadastro, com validações de nome e e-mail. |
-| src/carrinho.ts | Controla os itens do carrinho, quantidades, remoção de itens, subtotais, total e limpeza do carrinho. |
-| src/pedidos.ts | Finaliza compras, registra pedidos e permite consultar pedidos. Também verifica cliente, carrinho e estoque durante a finalização. |
-| src/relatorios.ts | Consolida e apresenta informações gerais, dados de estoque e resumos de vendas por produto e por cliente. |
-| tsconfig.json | Configura como o TypeScript deve verificar e compilar os arquivos do projeto. |
-| package.json | Registra informações do projeto e suas dependências. |
-| package-lock.json | Registra as versões resolvidas das dependências i…
+O que cada arquivo faz?ArquivoResponsabilidadesrc/main.tsMenu principal, submenus e interface via terminal com o usuário.src/types.tsInterfaces e tipos (Produto, Cliente, ItemCarrinho, ItemPedido, Pedido).src/produtos.tsCRUD de produtos e controle de estoque.src/clientes.tsGerenciamento e validações de clientes (nome, e-mail único).src/carrinho.tsControle do carrinho, cálculo de subtotais e limpeza.src/pedidos.tsProcessamento e histórico de vendas/pedidos.src/relatorios.tsConsolidação de dados de estoque e resumos de vendas.tsconfig.jsonConfigurações do compilador TypeScript.package.jsonMetadados do projeto e scripts de execução.package-lock.jsonMapeamento exato das dependências instaladas.RequisitosNode.js (versão 16 ou superior)npm (geralmente instalado junto com o Node.js)Como Instalar e ExecutarClone o repositório:Bashgit clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+cd Miniprojeto_Ecommerce_Matozo
+Instale as dependências:Bashnpm install
+Compile o código TypeScript:Bashnpm run build
+Execute a aplicação:Bashnpm start
+Dica: Se possuir o ts-node instalado globalmente ou configurado nos scripts, você também pode rodar diretamente com npx ts-node src/main.ts.Como Utilizar o SistemaAo executar o sistema, um menu interativo será exibido no terminal. Digite o número correspondente à opção desejada para navegar entre as seções:Plaintext=== SISTEMA DE E-COMMERCE ===
+1. Gerenciar Produtos
+2. Gerenciar Clientes
+3. Gerenciar Carrinho
+4. Processar Pedidos
+5. Visualizar Relatórios
+0. Sair
